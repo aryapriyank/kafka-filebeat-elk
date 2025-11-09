@@ -1,0 +1,14 @@
+filebeat.inputs:
+- type: filestream
+  id: ms-id
+  paths:
+    - /app/logs/*.log
+    
+output.kafka:
+  hosts: ["kafka:9092"]
+  topic: "logs"
+  partition.round_robin:
+    reachable_only: true
+  required_acks: 1
+  compression: gzip
+max_message_bytes: 1000000
