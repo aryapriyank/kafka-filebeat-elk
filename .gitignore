@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+
+# Environment files
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Build output
+dist/
+build/
+coverage/
+
+# IDEs and OS files
+.vscode/
+.idea/
+.DS_Store
+
+# Lockfiles (optional)
+# package-lock.json
+# yarn.lock
