@@ -4,8 +4,9 @@ require("winston-daily-rotate-file");
 const fs = require('fs');
 const path = require('path');
 
-// Ensure a writable logs directory exists (relative to project root)
-const logsDir = path.join(process.cwd(), 'logs');
+// Ensure a writable logs directory exists inside the microservices folder
+// Use __dirname so logs are created next to this file (microservices/logs)
+const logsDir = path.join(__dirname, 'logs');
 try {
   fs.mkdirSync(logsDir, { recursive: true });
 } catch (err) {

@@ -1,0 +1,47 @@
+services:
+  ms-web-service:
+    image: base-microservice
+    build: ./microservices
+    container_name: ms-web-service
+    environment:
+      - SERVICE_NAME=web-service
+    volumes:
+      - log_data:/app/logs
+  ms-auth-service:
+    image: base-microservice
+    container_name: ms-auth-service
+    environment:
+      - SERVICE_NAME=auth-service
+    volumes:
+      - log_data:/app/logs
+  ms-user-service:
+    image: base-microservice
+    container_name: ms-user-service
+    environment:
+      - SERVICE_NAME=user-service
+    volumes:
+      - log_data:/app/logs
+  ms-order-service:
+    image: base-microservice
+    container_name: ms-order-service
+    environment:
+      - SERVICE_NAME=order-service
+    volumes:
+      - log_data:/app/logs
+  ms-inventory-service:
+    image: base-microservice
+    container_name: ms-inventory-service
+    environment:
+      - SERVICE_NAME=inventory-service
+    volumes:
+      - log_data:/app/logs
+  ms-payment-service:
+    image: base-microservice
+    container_name: ms-payment-service
+    environment:
+      - SERVICE_NAME=payment-service
+    volumes:
+      - log_data:/app/logs
+
+volumes:
+  log_data:
