@@ -23,5 +23,10 @@
   "devDependencies": {
     "eslint": "^9.39.1",
     "globals": "^16.5.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.1.0",
+    "winston": "^3.18.3",
+    "winston-daily-rotate-file": "^5.0.0"
   }
 }
