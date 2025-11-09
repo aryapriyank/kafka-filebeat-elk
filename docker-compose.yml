@@ -112,5 +112,15 @@ services:
         soft: -1
         hard: -1
 
+  kibana:
+    image: docker.elastic.co/kibana/kibana:9.2.0
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200 # Point Kibana to the Elasticsearch node 
+    depends_on:
+      - elasticsearch
+
 volumes:
   log_data:
