@@ -1,10 +1,15 @@
-FROM node:22-alpine
+FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY package*.json .
-RUN npm install
+# Copy requirements file (if you have one, if not this will be created)
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY microservice.js .
+# Copy the Python script
+COPY microservice.py .
 
-CMD ["node", "microservice.js"]
+# Create logs directory
+RUN mkdir -p logs
+
+CMD ["python", "microservice.py"]
