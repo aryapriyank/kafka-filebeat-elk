@@ -1,29 +1,19 @@
-# Node modules
-node_modules/
-
-# Environment files
-.env
+# Python bytecode
+__pycache__/
+*.py[cod]
 
 # Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 *.log
-
-# Keep logs directory but ignore its contents
 microservices/logs/*
 !microservices/logs/.gitkeep
 
-# Build output
-dist/
-build/
-coverage/
+# Environment variables
+.env
 
-# IDEs and OS files
+# IDE settings
 .vscode/
 .idea/
-.DS_Store
 
-# Lockfiles (optional)
-# package-lock.json
-# yarn.lock
+# OS files
+.DS_Store
+Thumbs.db
